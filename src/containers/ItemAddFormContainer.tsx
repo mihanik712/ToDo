@@ -1,8 +1,9 @@
 import moment from 'moment';
-import React, { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
+import * as React from 'react';
 import { useDispatch } from 'react-redux';
-import ItemAddForm from '../components/ItemAddForm';
-import { addItem } from '../redux/actions';
+import ItemAddForm from 'components/ItemAddForm';
+import { addItem } from 'redux/actions';
 
 const ItemAddFormContainer = () => {
 	const [label, setLabel] = useState<string>('');
@@ -10,10 +11,11 @@ const ItemAddFormContainer = () => {
 	const dispatch = useDispatch();
 
 	console.log('ItemAddFormContainer render');
-	
+
 	const handleLabelChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) =>
-		setLabel(e.currentTarget.value)
-	, []);
+		setLabel(e.currentTarget.value),
+		[]
+	);
 
 	const handleDeadLineChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) =>
 		setDeadLine(e.currentTarget.value)
@@ -40,5 +42,3 @@ const ItemAddFormContainer = () => {
 };
 
 export default memo(ItemAddFormContainer);
-
-

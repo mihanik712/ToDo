@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import { useMemo } from 'react';
 import {shallowEqual, useSelector} from 'react-redux';
 import { getFilter, getSortField, getSortType, getTerm, getTodoData, getVisibleItems} from '../redux/selectors';
 import AppHeader from '../components/AppHeader';

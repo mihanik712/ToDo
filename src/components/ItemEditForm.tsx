@@ -1,4 +1,5 @@
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import moment from 'moment';
 import { ItemType } from 'types/TodoTypes';
@@ -25,10 +26,10 @@ const ItemEditForm = ({
 	const { id, important, done, label } = item;
 	const itemEditFormInputCN = useMemo(
 		() => cn(
-			"item-edit-form__label",
+			'item-edit-form__label',
 			{
-				"item-edit-form__label--done": done,
-				"item-edit-form__label--important": important
+				'item-edit-form__label--done': done,
+				'item-edit-form__label--important': important
 			}
 		), [done, important]
 	);

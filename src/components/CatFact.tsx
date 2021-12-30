@@ -1,4 +1,3 @@
-import React from 'react';
 import ErrorIndicator from 'components/ErrorIndicator';
 import Spinner from 'components/Spinner';
 import 'styles/cat-fact.scss';

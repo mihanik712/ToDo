@@ -1,4 +1,5 @@
-import React, {memo, useCallback} from 'react';
+import { memo, useCallback } from 'react';
+import * as React from 'react';
 import {useDispatch} from 'react-redux';
 import ItemStatusFilter from '../components/ItemStatusFilter';
 import SearchPanel from '../components/SearchPanel';

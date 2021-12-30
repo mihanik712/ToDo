@@ -1,15 +1,15 @@
-import React, {memo, useEffect} from "react";
-import CatFact from "../components/CatFact";
-import useFetchCatFact from "../requests/CatRequests";
+import { memo, useEffect } from 'react';
+import CatFact from 'components/CatFact';
+import useFetchCatFact from 'requests/CatRequests';
 
 const CatFactContainer = () => {
 	console.log('CatFactContainer render');
-	
-	const {data, isLoading, error, fetchCatFact} = useFetchCatFact();
+
+	const { data, isLoading, error, fetchCatFact } = useFetchCatFact();
 
 	useEffect(() => {
 		fetchCatFact();
-	}, [fetchCatFact])
+	}, [fetchCatFact]);
 
 	return (
 		<CatFact
@@ -18,7 +18,7 @@ const CatFactContainer = () => {
 			error={error}
 			handleUpdateCatFact={fetchCatFact}
 		/>
-	)
-}
+	);
+};
 
 export default memo(CatFactContainer);

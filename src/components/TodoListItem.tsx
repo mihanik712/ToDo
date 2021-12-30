@@ -1,11 +1,13 @@
-import React, {useMemo} from 'react';
+import { useMemo } from 'react';
 import cn from 'classnames';
 import '../styles/todo-list-item.scss';
 import moment from 'moment';
-import {ItemType} from '../types/TodoTypes';
-import { BsFillBookmarkStarFill } from 'react-icons/bs';
-import { BsPencilFill } from 'react-icons/bs';
-import { BsXLg } from 'react-icons/bs';
+import { ItemType } from 'types/TodoTypes';
+import {
+	BsFillBookmarkStarFill,
+	BsPencilFill,
+	BsXLg,
+} from 'react-icons/bs';
 
 interface TodoListItemProps {
 	item: ItemType;
@@ -22,11 +24,11 @@ const TodoListItem = ({
 	handleToggleDone,
 	handleToggleImportant,
 	handleDeleteItem,
-	handleToggleIsEditItem
+	handleToggleIsEditItem,
 }: TodoListItemProps) => {
 	console.log('TodoListItem render');
 
-	const {id, label, date, important, done, deadLine} = item;
+	const { id, label, date, important, done, deadLine } = item;
 	const todoListItemLabelCN = useMemo(
 		() => cn(
 			"todo-list-item__label",
@@ -39,8 +41,7 @@ const TodoListItem = ({
 
 	return (
 		<li key={id} className="todo-list__item todo-list-item">
-			<div className='todo-list-item__row'>
-
+			<div className="todo-list-item__row">
 				<label className="todo-list-item__left">
 					<input
 						className="todo-list-item__checkbox"
@@ -58,8 +59,7 @@ const TodoListItem = ({
 						<span className="todo-list-item__date">
 							{moment(date).format('ddd, D MMM, H:mm')}
 						</span>
-						{deadLine &&
-							<span className={`todo-list-item__dead-line todo-list-item__dead-line${isOverdue ? "--overdue" : ""}`}>
+						{deadLine && <span className={`todo-list-item__dead-line todo-list-item__dead-line${isOverdue ? "--overdue" : ""}`}>
 								{moment(deadLine).format('ddd, D MMM, H:mm')}
 							</span>
 						}
@@ -71,7 +71,7 @@ const TodoListItem = ({
 							className="todo-list-item__button button--outline--success"
 							onClick={handleToggleImportant}
 						>
-							<BsFillBookmarkStarFill size='1.1rem'/>
+							<BsFillBookmarkStarFill size="1.1rem" />
 						</button>
 
 						<button
@@ -79,7 +79,7 @@ const TodoListItem = ({
 							className="todo-list-item__button button--outline--warning"
 							onClick={handleToggleIsEditItem}
 						>
-							<BsPencilFill size='1.1rem'/>
+							<BsPencilFill size="1.1rem" />
 						</button>
 
 						<button
@@ -87,15 +87,13 @@ const TodoListItem = ({
 							className="todo-list-item__button button--outline--danger"
 							onClick={handleDeleteItem}
 						>
-							<BsXLg size='1.1rem'/>
+							<BsXLg size="1.1rem" />
 						</button>
 					</div>
 				</div>
-
 			</div>
 		</li>
 	);
-
 };
 
 export default TodoListItem;

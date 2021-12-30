@@ -1,4 +1,3 @@
-import React from 'react';
 import 'styles/error-indicator.scss';
 
 interface ErrorIndicatorProps {

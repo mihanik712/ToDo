@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useMemo} from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import ItemSelectPanel from '../components/ItemSelectPanel';
 import { deleteAllDoneItems, toggleAllItemsDone, toggleSort } from '../redux/actions';

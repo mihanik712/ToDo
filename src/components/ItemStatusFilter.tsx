@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { FilterMode } from 'types/TodoTypes';
 import 'styles/item-status-filter.scss';
 

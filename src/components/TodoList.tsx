@@ -1,11 +1,11 @@
-import React, {ReactNode} from 'react';
+import { ReactNode } from 'react';
 import '../styles/todo-list.scss';
 
 interface IProps {
 	children: ReactNode;
 }
 
-const TodoList = ({children}: IProps) => {
+const TodoList = ({ children }: IProps) => {
 	console.log('TodoList render');
 
 	return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { SortField, SortType } from 'types/TodoTypes';
 import 'styles/item-select-panel.scss';
 

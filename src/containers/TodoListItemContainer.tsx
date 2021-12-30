@@ -1,5 +1,6 @@
 import moment from 'moment';
-import React, {memo, useCallback, useState} from 'react';
+import { memo, useCallback, useState } from 'react';
+import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import ItemEditForm from '../components/ItemEditForm';
 import TodoListItem from '../components/TodoListItem';
