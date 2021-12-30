@@ -1,4 +1,5 @@
 import { SortField, SortType } from 'types/TodoTypes';
+import { BsSortUp, BsSortDown } from 'react-icons/bs';
 import 'styles/item-select-panel.scss';
 
 interface ItemSelectPanelProps {
@@ -53,15 +54,14 @@ const ItemSelectPanel = ({
 					onClick={handleSortPriority}
 				>
 					<span
-						className={
-							`item-select-panel__button-icon${sortType === SortType.desc && sortField === SortField.priority
-								? ' item-select-panel__button-icon--up'
-								: ''}`
-						}
+						className="item-select-panel__button-icon"
 					>
 						Sort priority
 						{sortField === SortField.priority
-							&& <i className={iconSortClassName} />}
+							&& (sortType === SortType.asc
+								? <BsSortUp size="1.5rem" />
+								: <BsSortDown size="1.5rem" />
+							)}
 					</span>
 				</button>
 
@@ -71,16 +71,14 @@ const ItemSelectPanel = ({
 					onClick={handleSortDate}
 				>
 					<span
-						className={
-							`item-select-panel__button-icon${sortType === SortType.desc && sortField === SortField.date
-								? ' item-select-panel__button-icon--up'
-								: ''
-							}`
-						}
+						className="item-select-panel__button-icon"
 					>
 						Sort date
 						{sortField === SortField.date
-							&& <i className={iconSortClassName} />}
+							&& (sortType === SortType.asc
+								? <BsSortUp size="1.5rem" />
+								: <BsSortDown size="1.5rem" />
+							)}
 					</span>
 				</button>
 
@@ -90,16 +88,14 @@ const ItemSelectPanel = ({
 					onClick={handleSortDeadLine}
 				>
 					<span
-						className={
-							`item-select-panel__button-icon${sortType === SortType.desc && sortField === SortField.deadLine
-								? ' item-select-panel__button-icon--up'
-								: ''
-							}`
-						}
+						className="item-select-panel__button-icon"
 					>
 						Sort dead-line
 						{sortField === SortField.deadLine
-							&& <i className={iconSortClassName} />}
+							&& (sortType === SortType.asc
+								? <BsSortUp size="1.5rem" />
+								: <BsSortDown size="1.5rem" />
+							)}
 					</span>
 				</button>
 			</div>

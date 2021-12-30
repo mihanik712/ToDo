@@ -44,7 +44,7 @@ const ItemAddForm = ({
 
 					<button
 						className="item-add-form__button"
-						type="button"
+						type="submit"
 					>
 						Add Item
 					</button>

@@ -7,11 +7,11 @@ import { BsPencilFill } from 'react-icons/bs';
 import 'styles/item-edit-form.scss';
 
 interface ItemEditFormProps {
-		item: ItemType;
-		deadLine: number;
-		handleLabelChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
-		handleDeadLineChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
-		onSubmit: (e: React.SyntheticEvent) => void;
+	item: ItemType;
+	deadLine: number;
+	handleLabelChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
+	handleDeadLineChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
+	onSubmit: (e: React.SyntheticEvent) => void;
 }
 
 const ItemEditForm = ({

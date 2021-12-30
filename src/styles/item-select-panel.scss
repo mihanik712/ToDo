@@ -15,9 +15,10 @@
 	&__button-icon {
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
 
-		&--up {
-			align-items: end;
-		}
+		// &--up {
+		// 	align-items: end;
+		// }
 	}
 }
