@@ -1,11 +1,8 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import ItemSelectPanel from 'components/ItemSelectPanel';
 import { deleteAllDoneItems, toggleAllItemsDone, toggleSort } from 'redux/actions';
 import { SortField, SortType } from 'types/TodoTypes';
-
-const ICON_DESC = 'fa fa-sort-up fa-lg icons';
-const ICON_ASC = 'fa fa-sort-down fa-lg icons';
+import ItemSelectPanel from 'components/ItemSelectPanel';
 
 interface ItemSelectPanelContainerProps {
 	sortField: SortField;
@@ -20,10 +17,6 @@ const ItemSelectPanelContainer = ({
 }: ItemSelectPanelContainerProps) => {
 	console.log('ItemSelectPanelContainer render');
 
-	const iconSortClassName = useMemo(() => (
-		sortType === SortType.desc ? ICON_DESC : ICON_ASC
-	), [sortType]);
-
 	const dispatch = useDispatch();
 
 	const handleToggleDoneAllItems = useCallback(() =>
@@ -34,23 +27,9 @@ const ItemSelectPanelContainer = ({
 		dispatch(deleteAllDoneItems()),
 	[]);
 
-	const handleSortPriority = useCallback(() =>
+	const handleSortItems = useCallback((sortFieldArg: SortField) =>
 		dispatch(toggleSort(
-			SortField.priority,
-			sortType === SortType.asc ? SortType.desc : SortType.asc,
-		)),
-	[sortType]);
-
-	const handleSortDate = useCallback(() =>
-		dispatch(toggleSort(
-			SortField.date,
-			sortType === SortType.asc ? SortType.desc : SortType.asc,
-		)),
-	[sortType]);
-
-	const handleSortDeadLine = useCallback(() =>
-		dispatch(toggleSort(
-			SortField.deadLine,
+			sortFieldArg,
 			sortType === SortType.asc ? SortType.desc : SortType.asc,
 		)),
 	[sortType]);
@@ -60,12 +39,9 @@ const ItemSelectPanelContainer = ({
 			sortField={sortField}
 			sortType={sortType}
 			isAllDone={isAllDone}
-			iconSortClassName={iconSortClassName}
 			handleToggleDoneAllItems={handleToggleDoneAllItems}
 			handleDeleteAllDoneItems={handleDeleteAllDoneItems}
-			handleSortPriority={handleSortPriority}
-			handleSortDate={handleSortDate}
-			handleSortDeadLine={handleSortDeadLine}
+			handleSortItems={handleSortItems}
 		/>
 	);
 };
