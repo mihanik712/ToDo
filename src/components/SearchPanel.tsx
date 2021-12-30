@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 import '../styles/search-panel.scss';
 
 interface SearchPanelProps {
@@ -6,7 +6,7 @@ interface SearchPanelProps {
 	handleSearchChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
 }
 
-const SearchPanel = ({term, handleSearchChange}: SearchPanelProps) => {
+const SearchPanel = ({ term, handleSearchChange }: SearchPanelProps) => {
 	console.log('SearchPanel render');
 
 	return (
