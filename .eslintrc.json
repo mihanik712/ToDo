@@ -32,6 +32,14 @@
 		"linebreak-style": 0,
 		"no-unused-vars": [1, { "args": "none" }],
 		"no-unused-expressions" : [1, {"allowTernary": true}],
-		"function-paren-newline": [1, "consistent"]
+		"function-paren-newline": [1, "consistent"],
+		//"object-curly-spacing": [1, "never"],
+		"object-curly-newline": [1, { "multiline": true, "consistent": true }],
+		"implicit-arrow-linebreak": 0, //[1, "below"],
+		"jsx-a11y/no-autofocus": 1,
+		"jsx-a11y/label-has-associated-control": 0,
+		"react/jsx-wrap-multilines": 1,
+		"no-shadow": 1,
+		"default-param-last": 1
 	}
 }

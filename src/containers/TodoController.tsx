@@ -1,14 +1,21 @@
 import { useMemo } from 'react';
-import {shallowEqual, useSelector} from 'react-redux';
-import { getFilter, getSortField, getSortType, getTerm, getTodoData, getVisibleItems} from '../redux/selectors';
-import AppHeader from '../components/AppHeader';
-import TodoList from '../components/TodoList';
-import TodoListItemContainer from './TodoListItemContainer';
-import ItemSelectPanelContainer from './ItemSelectPanelContainer';
-import ItemAddFormContainer from './ItemAddFormContainer';
-import SearchAndFilterContainer from './SearchAndFilterContainer';
-import { ReduxStateType } from '../types/TodoTypes';
-import CatFactContainer from './CatFactContainer';
+import { shallowEqual, useSelector } from 'react-redux';
+import {
+	getFilter,
+	getSortField,
+	getSortType,
+	getTerm,
+	getTodoData,
+	getVisibleItems,
+} from 'redux/selectors';
+import AppHeader from 'components/AppHeader';
+import TodoList from 'components/TodoList';
+import TodoListItemContainer from 'containers/TodoListItemContainer';
+import ItemSelectPanelContainer from 'containers/ItemSelectPanelContainer';
+import ItemAddFormContainer from 'containers/ItemAddFormContainer';
+import SearchAndFilterContainer from 'containers/SearchAndFilterContainer';
+import CatFactContainer from 'containers//CatFactContainer';
+import { ReduxStateType } from 'types/TodoTypes';
 
 const mapStateToProps = (state: ReduxStateType) => ({
 	todoData: getTodoData(state),
@@ -17,14 +24,10 @@ const mapStateToProps = (state: ReduxStateType) => ({
 	sortField: getSortField(state),
 	sortType: getSortType(state),
 	visibleItems: getVisibleItems(state),
-	// catFact: getCatFact(state),
-	// catLoading: getCatFactLoading(state),
-	// catError: getCatFactError(state),
-})
+});
 
 const TodoController = () => {
 	console.log('TodoController render');
-	
 
 	const {
 		todoData,
@@ -32,11 +35,11 @@ const TodoController = () => {
 		filter,
 		sortField,
 		sortType,
-		visibleItems
+		visibleItems,
 	} = useSelector(mapStateToProps, shallowEqual);
 	const doneCount = useMemo(() => todoData.filter((el) => el.done).length, [todoData]);
 	const todoCount = useMemo(() => todoData.length - doneCount, [doneCount, todoData]);
-	const isAllDone = useMemo(() => todoData.every(todo => todo.done === true), [todoData]);
+	const isAllDone = useMemo(() => todoData.every((todo) => todo.done === true), [todoData]);
 
 	return (
 		<>
@@ -62,9 +65,9 @@ const TodoController = () => {
 					/>
 				))}
 			</TodoList>
-			<CatFactContainer/>
+			<CatFactContainer />
 		</>
 	);
-}
+};
 
 export default TodoController;

@@ -29,15 +29,14 @@ const TodoListItem = ({
 	console.log('TodoListItem render');
 
 	const { id, label, date, important, done, deadLine } = item;
-	const todoListItemLabelCN = useMemo(
-		() => cn(
-			"todo-list-item__label",
+	const todoListItemLabelCN = useMemo(() =>
+		cn(
+			'todo-list-item__label',
 			{
-				"todo-list-item__label--done": done,
-				"todo-list-item__label--important": important
-			}
-		), [done, important]
-	);
+				'todo-list-item__label--done': done,
+				'todo-list-item__label--important': important,
+			},
+		), [done, important]);
 
 	return (
 		<li key={id} className="todo-list__item todo-list-item">
@@ -59,9 +58,13 @@ const TodoListItem = ({
 						<span className="todo-list-item__date">
 							{moment(date).format('ddd, D MMM, H:mm')}
 						</span>
-						{deadLine && <span className={`todo-list-item__dead-line todo-list-item__dead-line${isOverdue ? "--overdue" : ""}`}>
-								{moment(deadLine).format('ddd, D MMM, H:mm')}
-							</span>
+						{
+							deadLine
+								&& (
+									<span className={`todo-list-item__dead-line ${isOverdue ? 'todo-list-item__dead-line--overdue' : ''}`}>
+										{moment(deadLine).format('ddd, D MMM, H:mm')}
+									</span>
+								)
 						}
 					</div>
 

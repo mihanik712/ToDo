@@ -1,4 +1,4 @@
-import * as todoActions from '../redux/actions'
+import * as todoActions from 'redux/actions';
 
 export type ItemType = {
 	date: number;
@@ -12,12 +12,12 @@ export type ItemType = {
 export enum SortField {
 	priority = 'important',
 	date = 'date',
-	deadLine = 'deadLine'
+	deadLine = 'deadLine',
 }
 
 export enum SortType {
 	asc = 'asc',
-	desc = 'desc'
+	desc = 'desc',
 }
 
 export enum FilterMode {
@@ -25,7 +25,7 @@ export enum FilterMode {
 	done = 'done',
 	active = 'active',
 	overdue = 'overdue',
-	actual = 'actual'
+	actual = 'actual',
 }
 
 export type ItemsStateType = {

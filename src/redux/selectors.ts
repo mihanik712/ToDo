@@ -1,7 +1,13 @@
-import moment from "moment";
+import moment from 'moment';
 import _ from 'underscore';
-import {createSelector} from "reselect";
-import {FilterMode, ItemType, ReduxStateType, SortField, SortType} from "../types/TodoTypes";
+import { createSelector } from 'reselect';
+import {
+	FilterMode,
+	ItemType,
+	ReduxStateType,
+	SortField,
+	SortType,
+} from 'types/TodoTypes';
 
 export const getTodoData = (state: ReduxStateType) => state.TodoItems.todoData;
 export const getSort = (state: ReduxStateType) => state.TodoItems.sort;
@@ -18,32 +24,33 @@ const getSearchedItems = createSelector(
 			return todoData;
 		}
 
-		return todoData.filter(item => item.label
+		return todoData.filter((item) => item.label
 			.toLowerCase()
-			.includes(term.trim().toLowerCase())
-		)
-	}
+			.includes(term.trim().toLowerCase()));
+	},
 );
 
 const getFilteredItems = createSelector(
 	getSearchedItems,
 	getFilter,
 	(todoData, filter) => {
-		switch(filter) {
+		switch (filter) {
 			case FilterMode.all:
 				return todoData;
 			case FilterMode.active:
-				return todoData.filter(item => !item.done);
+				return todoData.filter((item) => !item.done);
 			case FilterMode.done:
-				return todoData.filter(item => item.done);
+				return todoData.filter((item) => item.done);
 			case FilterMode.actual:
-				return todoData.filter(item => item.deadLine && (moment().valueOf() - item.deadLine <= 0));
+				return todoData.filter((item) =>
+					item.deadLine && (moment().valueOf() - item.deadLine <= 0));
 			case FilterMode.overdue:
-				return todoData.filter(item => item.deadLine && (moment().valueOf() - item.deadLine > 0));
+				return todoData.filter((item) =>
+					item.deadLine && (moment().valueOf() - item.deadLine > 0));
 			default:
 				return todoData;
 		}
-	}
+	},
 );
 
 // const sortItemsBoolean = (sortType: SortType, sortField: SortField, arr: ItemType[]) => {
@@ -92,15 +99,18 @@ const getFilteredItems = createSelector(
 //   }
 // }
 
-const sortItems = (arr: ItemType[], sortField: SortField, sortType: SortType) => {
-	return sortType === SortType.asc
-		? _.sortBy(arr, item => item[sortField] === null ? Infinity : item[sortField])
+const sortItems = (arr: ItemType[], sortField: SortField, sortType: SortType) => (
+	sortType === SortType.asc
+		? _.sortBy(arr, (item) => (
+			item[sortField] === null
+				? Infinity
+				: item[sortField]))
 		: _.sortBy(arr, sortField).reverse()
-}
+);
 
 export const getVisibleItems = createSelector(
 	getSortField,
 	getSortType,
 	getFilteredItems,
-	(sortField, sortType, todoData) => sortItems(todoData, sortField, sortType)
+	(sortField, sortType, todoData) => sortItems(todoData, sortField, sortType),
 );

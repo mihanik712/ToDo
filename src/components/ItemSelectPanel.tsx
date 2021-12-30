@@ -53,10 +53,11 @@ const ItemSelectPanel = ({
 					onClick={handleSortPriority}
 				>
 					<span
-						className={`item-select-panel__button-icon
-							${sortType === SortType.desc && sortField === SortField.priority
+						className={
+							`item-select-panel__button-icon${sortType === SortType.desc && sortField === SortField.priority
 								? ' item-select-panel__button-icon--up'
-								: ''}`}
+								: ''}`
+						}
 					>
 						Sort priority
 						{sortField === SortField.priority
@@ -70,11 +71,12 @@ const ItemSelectPanel = ({
 					onClick={handleSortDate}
 				>
 					<span
-						className={`item-select-panel__button-icon
-							${sortType === SortType.desc && sortField === SortField.date
+						className={
+							`item-select-panel__button-icon${sortType === SortType.desc && sortField === SortField.date
 								? ' item-select-panel__button-icon--up'
 								: ''
-							}`}
+							}`
+						}
 					>
 						Sort date
 						{sortField === SortField.date
@@ -88,8 +90,8 @@ const ItemSelectPanel = ({
 					onClick={handleSortDeadLine}
 				>
 					<span
-						className={`item-select-panel__button-icon
-							${sortType === SortType.desc && sortField === SortField.deadLine
+						className={
+							`item-select-panel__button-icon${sortType === SortType.desc && sortField === SortField.deadLine
 								? ' item-select-panel__button-icon--up'
 								: ''
 							}`

@@ -24,15 +24,14 @@ const ItemEditForm = ({
 	console.log('ItemEditForm render');
 
 	const { id, important, done, label } = item;
-	const itemEditFormInputCN = useMemo(
-		() => cn(
+	const itemEditFormInputCN = useMemo(() =>
+		cn(
 			'item-edit-form__label',
 			{
 				'item-edit-form__label--done': done,
-				'item-edit-form__label--important': important
-			}
-		), [done, important]
-	);
+				'item-edit-form__label--important': important,
+			},
+		), [done, important]);
 
 	return (
 		<li key={id} className="todo-list__item item-edit-form">
@@ -54,7 +53,6 @@ const ItemEditForm = ({
 							type="text"
 							onChange={handleLabelChange}
 							defaultValue={label}
-							autoFocus
 						/>
 
 						<input
@@ -68,7 +66,7 @@ const ItemEditForm = ({
 					<div className="item-edit-form__right">
 						<button
 							className="item-edit-form__button"
-							type="button"
+							type="submit"
 						>
 							Save
 							<i className="item-edit-form__icon">

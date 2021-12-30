@@ -39,12 +39,14 @@
 		resize: none;
 		border: none;
 		border-radius: 0;
-		border-bottom: 1px solid #ffc107;
-		box-shadow: 0 0.3rem 0.2rem -0.2rem #ffc107;
+		border-bottom: 1px solid #ced4da;
+		//box-shadow: 0 0.3rem 0.2rem -0.2rem;
 
 		&:focus {
-			border-color: #80bdff;
-			box-shadow: 0 0.3rem 0.2rem -0.2rem rgb(0 123 255 / 25%);
+			//border-color: #ffc107;
+			border-bottom: 1px solid #ffc107;
+			box-shadow: 0 0.3rem 0.2rem -0.2rem #ffc107;
+			//box-shadow: 0 0.3rem 0.2rem -0.2rem rgb(0 123 255 / 25%);
 		}
 
 		&--done {

@@ -1,1 +1,3 @@
-export const catApiUrl = 'https://catfact.ninja';
+const catApiUrl = 'https://catfact.ninja';
+
+export default catApiUrl;
