@@ -1,0 +1,23 @@
+@import 'style.scss';
+
+.item-select-panel {
+	&__button-group {
+		@extend .button-group;
+		display: flex;
+		margin-top: 0.5rem;
+	}
+
+	&__button {
+		@extend .button;
+		flex: 1 1 auto;
+	}
+
+	&__button-icon {
+		display: flex;
+		justify-content: space-around;
+
+		&--up {
+			align-items: end;
+		}
+	}
+}

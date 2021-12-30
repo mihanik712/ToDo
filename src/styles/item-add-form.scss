@@ -1,0 +1,70 @@
+@import 'style.scss';
+
+.item-add-form {
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	&__left {
+		margin-top: 0.5rem;
+		display: flex;
+		flex: 1 0 auto;
+	}
+
+	&__input {
+		@extend .input;
+		flex: 1 0 auto;
+		//margin-right: 0.25rem;
+	}
+
+	&__right {
+		margin-top: 0.5rem;
+		margin-left: 0.25rem;
+		display: flex;
+		align-items: center;
+	}
+
+	&__dead-line {
+		// align-self: center;
+		// margin-top: 0.25rem;
+		width: 12rem;
+		padding: 0.5rem;
+		border: 1px solid #ced4da;
+		border-radius: 0.25rem;
+		user-select: none;
+
+		transition:
+			border-color .15s ease-in-out,
+			box-shadow .15s ease-in-out;
+
+		&:focus {
+			//color: #495057;
+			color: #212529;
+			background-color: #fff;
+			border-color: #80bdff;
+			outline: 0;
+			box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+		}
+	}
+
+	&__button {
+		@extend .button;
+		margin-left: 0.25rem;
+	}
+
+	@media screen and (max-width: 40rem) {
+		&__left {
+			flex: 1 0 25rem;
+		}
+
+		&__right {
+			margin-left: 0;
+		}
+
+		&__input {
+			flex: 1 0 25rem;
+		}
+	}
+}

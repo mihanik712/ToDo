@@ -1,0 +1,8 @@
+@import 'style.scss';
+
+.search-panel {
+	&__input {
+		@extend .input;
+		flex: 1 1 auto;
+	}
+}

@@ -1,0 +1,92 @@
+@import 'style.scss';
+
+.todo-list__item {
+	@extend .list-group__item;
+	padding: 0;
+}
+
+.item-edit-form {
+	font-size: 1.25rem;
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__left {
+		padding: 0.5rem;
+		margin-left: 0.5rem;
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		flex-wrap: wrap;
+
+	}
+
+	&__label {
+		@extend .input;
+
+		flex: 1 1 auto;
+		margin-left: 0.5rem;
+		padding: 0 0 0 0.5rem;
+
+		font-size: 1.25rem;
+		line-height: 1.25rem;
+		text-overflow: ellipsis;
+		color: rgba(0, 0, 0, 0.5);
+
+		resize: none;
+		border: none;
+		border-radius: 0;
+		border-bottom: 1px solid #ffc107;
+		box-shadow: 0 0.3rem 0.2rem -0.2rem #ffc107;
+
+		&:focus {
+			border-color: #80bdff;
+			box-shadow: 0 0.3rem 0.2rem -0.2rem rgb(0 123 255 / 25%);
+		}
+
+		&--done {
+			text-decoration: line-through;
+		}
+
+		&--important {
+			font-weight: bold;
+			color: rgba(70, 131, 180, 0.5);
+
+			&:focus {
+				color: steelblue;
+			}
+		}
+	}
+
+	&__right {
+		margin: 0.5rem;
+		display: flex;
+		flex-basis: content;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 7rem;
+	}
+
+	&__dead-line {
+		width: 10.5rem;
+		margin-left: 1rem;
+	}
+
+	&__button {
+		@extend .button, .button--outline--warning;
+		color: #212529;
+
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__icon {
+		display: flex;
+		margin-left: 1rem;
+	}
+}

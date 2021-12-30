@@ -1,0 +1,9 @@
+export const ADD_ITEM = 'TODO_ADD_ITEM' as const;
+export const EDIT_ITEM = 'TODO_EDIT_ITEM' as const;
+export const DELETE_ITEM = 'TODO_DELETE_ITEM' as const;
+export const TOGGLE_ALL_ITEMS_DONE = 'TODO_TOGGLE_ALL_ITEMS_DONE' as const;
+export const DELETE_ALL_DONE_ITEMS = 'TODO_DELETE_ALL_DONE_ITEMS' as const;
+export const TOGGLE_ITEM_PROPERTY = 'TODO_TOGGLE_ITEM_PROPERTY' as const;
+export const TOGGLE_SORT = 'TODO_TOGGLE_SORT' as const;
+export const CHANGE_FILTER = 'TODO_CHANGE_FILTER' as const;
+export const CHANGE_SEARCH = 'TODO_CHANGE_SEARCH' as const;

@@ -1,0 +1,28 @@
+@import 'style.scss';
+
+.cat-fact {
+	&__content {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		padding: 0.5rem 0.5rem;
+		border: 1px solid #00000020;
+		border-radius: 0.25rem;
+	}
+
+	&__title {
+		font-size: 1.5rem;
+	}
+
+	&__row {
+		margin-top: 0.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__button {
+		@extend .button;
+		margin-left: 1rem;
+		align-self: flex-start;
+	}
+}
