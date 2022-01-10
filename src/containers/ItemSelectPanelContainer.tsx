@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteAllDoneItems, toggleAllItemsDone, toggleSort } from 'redux/actions';
 import { SortField, SortType } from 'types/TodoTypes';
