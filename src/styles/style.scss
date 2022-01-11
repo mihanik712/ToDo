@@ -29,7 +29,7 @@ body {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: $grey;
+	color: $black50a;
 
 	padding: 0.375rem 0.75rem;
 	border: 1px solid $lightgrey;
@@ -39,13 +39,32 @@ body {
 		border-color .15s ease-in-out,
 		box-shadow .15s ease-in-out;
 
+	&::placeholder {
+		color: $black50a;
+		transition: all .15s ease-in-out;
+		text-align: start;
+	}
+
+	&:hover {
+		color: $black75a;
+		box-shadow: 0 0 0 0.2rem $lightcyan25a;
+
+		&::placeholder {
+			color: $black75a;
+			transform: scale(1.025);
+		}
+	}
+
 	&:focus {
 		color: $black;
 		background-color: $white;
 		border-color: $lightcyan;
 		outline: 0;
-
 		box-shadow: 0 0 0 0.2rem $lightcyan25a;
+
+		&::placeholder {
+			transform: scale(1);
+		}
 	}
 }
 
@@ -117,7 +136,7 @@ body {
 			}
 
 			&:focus {
-				box-shadow: 0 0 0 0.2rem $green50a;
+				box-shadow: 0 0 0 0.2rem $button-outline-success-50a;
 			}
 		}
 
@@ -131,7 +150,7 @@ body {
 			}
 
 			&:focus {
-				box-shadow: 0 0 0 0.2rem $yellow50a;
+				box-shadow: 0 0 0 0.2rem $button-outline-warning-50a;
 			}
 		}
 
@@ -141,7 +160,7 @@ body {
 
 			&:hover {
 				color: $white;
-				background-color: $button-outline-danger;
+				background-color: $button-outline-danger-50a;
 			}
 
 			&:focus {

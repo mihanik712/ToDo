@@ -53,60 +53,66 @@ const getFilteredItems = createSelector(
 	},
 );
 
-// const sortItemsBoolean = (sortType: SortType, sortField: SortField, arr: ItemType[]) => {
-//   return sortType === SortType.asc
-//     ? [...arr].sort((a) => (a[sortField] ? 1 : -1))
-//     : [...arr].sort((a) => (a[sortField] ? -1 : 1))
-// }
+// const sortItemsBoolean = (sortType: SortType, sortField: SortField, arr: ItemType[]) => (
+// 	sortType === SortType.asc
+// 		? [...arr].sort((a) => (a[sortField] ? 1 : -1))
+// 		: [...arr].sort((a) => (a[sortField] ? -1 : 1))
+// );
 
-// const sortItemsNumberOrNull = (sortType: SortType, sortField: SortField, arr: ItemType[])  => {
-//   return [...arr].sort((a,b) => {
-//     const sortItemA = a[sortField];
-//     const sortItemB = b[sortField];
+const sortItemsNumberOrNull = (sortType: SortType, sortField: SortField, arr: ItemType[]) => (
+	[...arr].sort((a, b) => {
+		const sortItemA = a[sortField];
+		const sortItemB = b[sortField];
 
-//     // equal items sort equally
-//     if (sortItemA === sortItemB) {
-//       return 0;
-//     }
-//     // nulls sort after anything else
-//     else if (sortItemA === null) {
-//       return 1;
-//     }
-//     else if (sortItemB === null) {
-//       return -1;
-//     }
-//     // otherwise, if we're ascending, lowest sorts first
-//     else if (sortType === SortType.asc) {
-//       return sortItemA < sortItemB ? -1 : 1;
-//     }
-//     // if descending, highest sorts first
-//     else {
-//       return sortItemA < sortItemB ? 1 : -1;
-//     }
-//   })
-// }
+		// equal items sort equally
+		if (sortItemA === sortItemB) return 0;
 
-// const sortItems = (sortField: SortField, sortType: SortType, arr: ItemType[]) => {
-//   switch (sortField) {
-//     case SortField.priority:
-//       return sortItemsBoolean(sortType, SortField.priority, arr);
-//     case SortField.date:
-//       return sortItemsNumberOrNull(sortType, SortField.date, arr);
-//     case SortField.deadLine:
-//       return sortItemsNumberOrNull(sortType, SortField.deadLine, arr);
-//     default:
-//       return arr;
-//   }
-// }
+		// nulls sort after anything else
+		if (sortItemA === null) return 1;
+		if (sortItemB === null) return -1;
 
-const sortItems = (arr: ItemType[], sortField: SortField, sortType: SortType) => (
-	sortType === SortType.asc
-		? _.sortBy(arr, (item) => (
-			item[sortField] === null
-				? Infinity
-				: item[sortField]))
-		: _.sortBy(arr, sortField).reverse()
+		// otherwise, if we're ascending, lowest sorts first
+		if (sortType === SortType.asc) return sortItemA < sortItemB ? -1 : 1;
+		// if descending, highest sorts first
+
+		return sortItemA < sortItemB ? 1 : -1;
+	})
 );
+
+const sortItems = (arr: ItemType[], sortField: SortField, sortType: SortType) => {
+	switch (sortField) {
+		case SortField.priority:
+			return sortItemsNumberOrNull(sortType, SortField.priority, arr);
+		case SortField.date:
+			return sortItemsNumberOrNull(sortType, SortField.date, arr);
+		case SortField.deadLine:
+			return sortItemsNumberOrNull(sortType, SortField.deadLine, arr);
+		default:
+			return arr;
+	}
+};
+
+// const sortItems = (arr: ItemType[], sortField: SortField, sortType: SortType) => (
+// 	sortType === SortType.asc
+// 		? _.sortBy(arr, (item) => (
+// 			item[sortField] === null
+// 				? Infinity
+// 				: item[sortField]))
+// 		: _.sortBy(arr, sortField).reverse()
+// );
+
+// const sortItems2 = (arr: ItemType[], sortField: SortField, sortType: SortType) => {
+// 	if (sortType === SortType.asc) {
+// 		return _.sortBy(arr, (item) => (
+// 			item[sortField] === null
+// 				? Infinity
+// 				: item[sortField]));
+// 	}
+// 	const sortedArr = _.sortBy(arr, sortField);
+// 	return _.isEqual(arr, sortedArr.re)
+// 		? sortedArr
+// 		: sortedArr.reverse();
+// };
 
 export const getVisibleItems = createSelector(
 	getSortField,

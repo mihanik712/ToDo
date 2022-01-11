@@ -2,7 +2,8 @@
 $white: #fff;
 
 $black: #212529;
-$black50a: #00000080;
+$black75a: #212529bf;
+$black50a: #21252980;
 
 $grey: #6c757d;
 $grey50a: #6c757d80;
@@ -11,18 +12,22 @@ $lightgrey: #ced4da;
 $lightblue: #80bdff;
 
 $steelblue: steelblue;
+$steelblue75a: #4682b4bf;
 $steelblue50a: #4683b480;
+
 
 $cyan: #138496;
 $lightcyan: #17a2b8;
-$lightcyan25a: #17a2b840;
 $lightcyan50a: #17a2b880;
+$lightcyan25a: #17a2b840;
+
 
 $green: #28a745;
 $green50a: #28a74580;
 
 $yellow: #ffc107;
 $yellow50a: #ffc10780;
+$yellow25a: #ffc10740;
 
 $red: #dc3545;
 $red50a: #dc354580;
@@ -31,6 +36,9 @@ $red50a: #dc354580;
 $button-active: $lightcyan;
 $button-active-hover: $cyan;
 
-$button-outline-success: $green;
+$button-outline-success: $steelblue;
+$button-outline-success-50a: $steelblue50a;
 $button-outline-warning: $yellow;
+$button-outline-warning-50a: $yellow50a;
 $button-outline-danger: $red;
+$button-outline-danger-50a: $red50a;

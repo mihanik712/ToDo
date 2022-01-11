@@ -2,5 +2,22 @@
 	&__input {
 		@extend .input;
 		flex: 1 1 auto;
+		font-weight: bold;
+		color: $lightcyan;
+
+		transition: all .15s ease-in-out;
+
+		&::placeholder {
+			font-weight: normal;
+		}
+
+		&:hover {
+			color: $cyan;
+		}
+
+		&:focus {
+			color: $black;
+			font-weight: normal;
+		}
 	}
 }
