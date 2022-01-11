@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { SortField, SortType } from 'types/TodoTypes';
 import { BsSortUp, BsSortDown } from 'react-icons/bs';
-import 'styles/item-select-panel.scss';
 
 interface ItemSelectPanelProps {
 	sortField: SortField;

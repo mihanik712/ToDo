@@ -5,7 +5,6 @@ import ItemStatusFilter from 'components/ItemStatusFilter';
 import SearchPanel from 'components/SearchPanel';
 import { changeFilter, changeSearch } from 'redux/actions';
 import { FilterMode } from 'types/TodoTypes';
-import '../styles/search-and-filter-container.scss';
 
 interface SearchAndFilterContainerProps {
 	filter: FilterMode;

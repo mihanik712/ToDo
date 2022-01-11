@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import 'styles/app-header.scss';
 
 interface AppHeaderProps {
 	doneCount: number;

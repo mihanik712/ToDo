@@ -1,5 +1,3 @@
-import 'styles/error-indicator.scss';
-
 interface ErrorIndicatorProps {
 	error: string;
 }

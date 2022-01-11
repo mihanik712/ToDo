@@ -14,7 +14,7 @@ body {
 	margin: 0 auto;
 
 	// @media screen and (max-width: ) {
-		
+
 	// }
 }
 
@@ -207,3 +207,16 @@ body {
 
 }
 
+@import 'styles/app.scss';
+@import 'styles/app-header.scss';
+@import 'styles/cat-fact.scss';
+@import 'styles/error-indicator.scss';
+@import 'styles/item-add-form.scss';
+@import 'styles/item-edit-form.scss';
+@import 'styles/item-select-panel.scss';
+@import 'styles/item-status-filter.scss';
+@import 'styles/search-panel.scss';
+@import 'styles/spinner.scss';
+@import 'styles/todo-list.scss';
+@import 'styles/todo-list-item.scss';
+@import 'styles/search-and-filter-container.scss';

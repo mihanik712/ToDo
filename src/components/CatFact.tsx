@@ -1,6 +1,5 @@
 import ErrorIndicator from 'components/ErrorIndicator';
 import Spinner from 'components/Spinner';
-import 'styles/cat-fact.scss';
 
 interface CatFactProps {
 	fact: string;

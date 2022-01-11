@@ -1,5 +1,3 @@
-import 'styles/spinner.scss';
-
 const Spinner = () => (
 	<div className="spinner">
 		<h5 className="spinner__title">Loading...</h5>

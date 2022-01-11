@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import '../styles/todo-list.scss';
 
 interface IProps {
 	children: ReactNode;

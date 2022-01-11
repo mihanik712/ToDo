@@ -1,5 +1,5 @@
 import TodoController from 'containers/TodoController';
-import 'styles/app.scss';
+import 'styles/style.scss';
 
 const App = () => (
 	<div className="todo-app">

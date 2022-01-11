@@ -4,7 +4,6 @@ import cn from 'classnames';
 import moment from 'moment';
 import { ItemType } from 'types/TodoTypes';
 import { BsPencilFill } from 'react-icons/bs';
-import 'styles/item-edit-form.scss';
 
 interface ItemEditFormProps {
 	item: ItemType;

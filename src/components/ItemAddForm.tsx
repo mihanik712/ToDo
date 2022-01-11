@@ -1,5 +1,4 @@
 import * as React from 'react';
-import 'styles/item-add-form.scss';
 
 interface ItemAddFormProps {
 	label: string;

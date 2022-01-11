@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { FilterMode } from 'types/TodoTypes';
-import 'styles/item-status-filter.scss';
 
 const buttonNames = [
 	{ name: FilterMode.all, label: 'All' },
