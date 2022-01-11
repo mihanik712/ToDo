@@ -8,6 +8,10 @@
 	&__button {
 		@extend .button;
 		flex: 1 1 auto;
+
+		&--active {
+			@extend .button--active;
+		}
 	}
 
 	&__button-icon {

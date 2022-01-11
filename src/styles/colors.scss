@@ -1,0 +1,36 @@
+// colors
+$white: #fff;
+
+$black: #212529;
+$black50a: #00000080;
+
+$grey: #6c757d;
+$grey50a: #6c757d80;
+$lightgrey: #ced4da;
+
+$lightblue: #80bdff;
+
+$steelblue: steelblue;
+$steelblue50a: #4683b480;
+
+$cyan: #138496;
+$lightcyan: #17a2b8;
+$lightcyan25a: #17a2b840;
+$lightcyan50a: #17a2b880;
+
+$green: #28a745;
+$green50a: #28a74580;
+
+$yellow: #ffc107;
+$yellow50a: #ffc10780;
+
+$red: #dc3545;
+$red50a: #dc354580;
+
+// button colors
+$button-active: $lightcyan;
+$button-active-hover: $cyan;
+
+$button-outline-success: $green;
+$button-outline-warning: $yellow;
+$button-outline-danger: $red;

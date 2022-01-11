@@ -7,9 +7,9 @@
 	&__button {
 		@extend .button;
 		flex: 1 1 auto;
-	}
 
-	&__button--active {
-		@extend .button--active;
+		&--active {
+			@extend .button--active;
+		}
 	}
 }

@@ -14,7 +14,6 @@
 	&__input {
 		@extend .input;
 		flex: 1 0 auto;
-		//margin-right: 0.25rem;
 	}
 
 	&__right {
@@ -25,26 +24,10 @@
 	}
 
 	&__dead-line {
-		// align-self: center;
-		// margin-top: 0.25rem;
-		width: 12rem;
-		padding: 0.5rem;
-		border: 1px solid #ced4da;
-		border-radius: 0.25rem;
-		user-select: none;
+		@extend .input;
 
-		transition:
-			border-color .15s ease-in-out,
-			box-shadow .15s ease-in-out;
-
-		&:focus {
-			//color: #495057;
-			color: #212529;
-			background-color: #fff;
-			border-color: #80bdff;
-			outline: 0;
-			box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
-		}
+		width: 13.5rem;
+		padding: 0.3125rem 0.5rem;
 	}
 
 	&__button {

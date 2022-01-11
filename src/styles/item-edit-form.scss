@@ -32,19 +32,16 @@
 		font-size: 1.25rem;
 		line-height: 1.25rem;
 		text-overflow: ellipsis;
-		color: rgba(0, 0, 0, 0.5);
+		color: $black50a;
 
 		resize: none;
 		border: none;
 		border-radius: 0;
-		border-bottom: 1px solid #ced4da;
-		//box-shadow: 0 0.3rem 0.2rem -0.2rem;
+		border-bottom: 1px solid $lightgrey;
 
 		&:focus {
-			//border-color: #ffc107;
-			border-bottom: 1px solid #ffc107;
-			box-shadow: 0 0.3rem 0.2rem -0.2rem #ffc107;
-			//box-shadow: 0 0.3rem 0.2rem -0.2rem rgb(0 123 255 / 25%);
+			border-bottom: 1px solid $yellow;
+			box-shadow: 0 0.4rem 0.2rem -0.2rem $yellow50a;
 		}
 
 		&--done {
@@ -53,10 +50,10 @@
 
 		&--important {
 			font-weight: bold;
-			color: rgba(70, 131, 180, 0.5);
+			color: $steelblue50a;
 
 			&:focus {
-				color: steelblue;
+				color: $steelblue;
 			}
 		}
 	}
@@ -78,7 +75,7 @@
 
 	&__button {
 		@extend .button, .button--outline--warning;
-		color: #212529;
+		color: $black;
 
 		display: flex;
 		justify-content: space-around;

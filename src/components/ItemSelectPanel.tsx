@@ -29,7 +29,7 @@ const ItemSelectPanel = ({
 
 	const sortButtons = sortButtonNames.map(({ name, label }) => (
 		<button
-			className="item-select-panel__button"
+			className={`item-select-panel__button ${sortField === name ? 'item-select-panel__button--active' : ''}`}
 			type="button"
 			key={name}
 			onClick={() => handleSortItems(name)}

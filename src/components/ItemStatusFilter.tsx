@@ -12,7 +12,7 @@ const buttonNames = [
 interface ItemStatusFilterProps {
 	filter: FilterMode;
 	handleFilterChange: (name: FilterMode) => void;
-	}
+}
 
 const ItemStatusFilter = ({ filter, handleFilterChange }: ItemStatusFilterProps) => {
 	console.log('ItemStatusFilter render');

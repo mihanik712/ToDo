@@ -3,19 +3,16 @@
 		margin-top: 0.5rem;
 		display: flex;
 		flex-wrap: wrap;
-		//justify-content: center;
 	}
 
 	&__search-panel {
 		margin-top: 0.5rem;
-		//display: flex;
 		flex: 1 0 auto;
 	}
 
 	&__item-status-filter {
 		margin-top: 0.5rem;
 		margin-left: 0.25rem;
-		//display: flex;
 	}
 
 	@media screen and (max-width: 40rem) {
