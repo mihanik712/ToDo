@@ -2,6 +2,7 @@ import * as React from 'react';
 
 interface ItemAddFormProps {
 	label: string;
+	isValidLabel: boolean;
 	deadLine: string;
 	handleLabelChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
 	handleDeadLineChange: (e: React.SyntheticEvent<HTMLInputElement>) => void;
@@ -10,6 +11,7 @@ interface ItemAddFormProps {
 
 const ItemAddForm = ({
 	label,
+	isValidLabel,
 	deadLine,
 	handleLabelChange,
 	handleDeadLineChange,
@@ -26,10 +28,10 @@ const ItemAddForm = ({
 				<div className="item-add-form__left">
 					<input
 						type="text"
-						className="item-add-form__input"
-						onChange={handleLabelChange}
+						className={`item-add-form__label ${isValidLabel ? '' : 'item-add-form__label--invalid'}`}
 						placeholder="What needs to be done"
 						value={label}
+						onChange={handleLabelChange}
 					/>
 				</div>
 
@@ -53,4 +55,4 @@ const ItemAddForm = ({
 	);
 };
 
-export default ItemAddForm;
+export default React.memo(ItemAddForm);

@@ -1,6 +1,8 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { SortField, SortType } from 'types/TodoTypes';
 import { BsSortUp, BsSortDown } from 'react-icons/bs';
+import { FcGenericSortingAsc, FcGenericSortingDesc } from 'react-icons/fc';
+import { IconContext } from 'react-icons';
 
 interface ItemSelectPanelProps {
 	sortField: SortField;
@@ -16,6 +18,12 @@ const sortButtonNames = [
 	{ name: SortField.date, label: 'Sort date' },
 	{ name: SortField.deadLine, label: 'Sort dead-line' },
 ];
+
+// const iconConfig = useMemo(() => {
+// 	color: 'white',
+// 	size: '1.5rem',
+// 	className: 'item-select-panel__sort-icon',
+// }, [];
 
 const ItemSelectPanel = ({
 	sortField,
@@ -38,10 +46,21 @@ const ItemSelectPanel = ({
 				className="item-select-panel__button-icon"
 			>
 				{label}
-				{sortField === name
+				{/* {sortField === name
 					&& (sortType === SortType.asc
 						? <BsSortUp size="1.5rem" className="item-select-panel__sort-icon" />
 						: <BsSortDown size="1.5rem" className="item-select-panel__sort-icon" />
+					)} */}
+
+				{sortField === name
+					&& (sortType === SortType.asc
+						? (
+							// <IconContext.Provider value={iconConfig}>
+							<FcGenericSortingAsc size="1.5rem" className="item-select-panel__sort-icon" />
+							// </IconContext.Provider>
+						) : (
+							<FcGenericSortingDesc size="1.5rem" color="fff" className="item-select-panel__sort-icon" />
+						)
 					)}
 			</span>
 		</button>

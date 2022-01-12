@@ -22,10 +22,10 @@ export enum SortType {
 
 export enum FilterMode {
 	all = 'all',
+	notDone = 'notDone',
 	done = 'done',
-	active = 'active',
+	unexpired = 'unexpired',
 	overdue = 'overdue',
-	actual = 'actual',
 }
 
 export type ItemsStateType = {

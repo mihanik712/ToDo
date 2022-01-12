@@ -16,12 +16,13 @@
 
 	&__button-icon {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		align-items: center;
 	}
 
 	&__sort-icon {
 		margin-left: 0.5rem;
 		flex-shrink: 0;
+		color: $white;
 	}
 }

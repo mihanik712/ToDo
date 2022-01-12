@@ -11,9 +11,24 @@
 		flex: 1 0 auto;
 	}
 
-	&__input {
+	&__label {
 		@extend .input;
 		flex: 1 0 auto;
+
+		&--invalid {
+			&:focus {
+				color: $black;
+				background-color: $white;
+				border-color: $red;
+				box-shadow: 0 0 0 0.2rem $red50a;
+			}
+
+			color: $black;
+			background-color: $white;
+			border-color: $red;
+			box-shadow: 0 0 0 0.2rem $red50a;
+
+		}
 	}
 
 	&__right {

@@ -3,9 +3,9 @@ import { FilterMode } from 'types/TodoTypes';
 
 const buttonNames = [
 	{ name: FilterMode.all, label: 'All' },
-	{ name: FilterMode.active, label: 'Active' },
+	{ name: FilterMode.notDone, label: 'Not Done' },
 	{ name: FilterMode.done, label: 'Done' },
-	{ name: FilterMode.actual, label: 'Actual' },
+	{ name: FilterMode.unexpired, label: 'Unexpired' },
 	{ name: FilterMode.overdue, label: 'Overdue' },
 ];
 

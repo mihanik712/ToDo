@@ -8,13 +8,15 @@ import moment from 'moment';
 const ItemAddFormContainer = () => {
 	const [label, setLabel] = useState<string>('');
 	const [deadLine, setDeadLine] = useState<string>('');
+	const [isValidLabel, setIsValidLabel] = useState<boolean>(true);
 	const dispatch = useDispatch();
 
 	console.log('ItemAddFormContainer render');
 
-	const handleLabelChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) =>
-		setLabel(e.currentTarget.value),
-	[]);
+	const handleLabelChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) => {
+		setLabel(e.currentTarget.value.trim());
+		setIsValidLabel(e.currentTarget.value.trim() !== '');
+	}, []);
 
 	const handleDeadLineChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) =>
 		setDeadLine(e.currentTarget.value),
@@ -22,9 +24,12 @@ const ItemAddFormContainer = () => {
 
 	const handleSubmit = useCallback((e: React.SyntheticEvent) => {
 		e.preventDefault();
-		deadLine === ''
-			? dispatch(addItem(label))
-			: dispatch(addItem(label, moment(deadLine).valueOf()));
+
+		if (label.trim() !== '') {
+			dispatch(addItem(label.trim(), deadLine ? moment(deadLine).valueOf() : null));
+		} else {
+			setIsValidLabel(false);
+		}
 		setLabel('');
 		setDeadLine('');
 	}, [label, deadLine]);
@@ -32,6 +37,7 @@ const ItemAddFormContainer = () => {
 	return (
 		<ItemAddForm
 			label={label}
+			isValidLabel={isValidLabel}
 			deadLine={deadLine}
 			handleLabelChange={handleLabelChange}
 			handleSubmit={handleSubmit}
