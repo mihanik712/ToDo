@@ -29,7 +29,7 @@ const ItemAddForm = ({
 					<input
 						type="text"
 						className={`item-add-form__label ${isValidLabel ? '' : 'item-add-form__label--invalid'}`}
-						placeholder="What needs to be done"
+						placeholder={isValidLabel ? 'what needs to be done' : 'start typing..'}
 						value={label}
 						onChange={handleLabelChange}
 					/>
@@ -40,6 +40,7 @@ const ItemAddForm = ({
 						className="item-add-form__dead-line"
 						type="datetime-local"
 						value={deadLine}
+						title="set due date"
 						onChange={handleDeadLineChange}
 					/>
 

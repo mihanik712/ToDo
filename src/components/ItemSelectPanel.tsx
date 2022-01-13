@@ -16,7 +16,7 @@ interface ItemSelectPanelProps {
 const sortButtonNames = [
 	{ name: SortField.priority, label: 'Sort priority' },
 	{ name: SortField.date, label: 'Sort date' },
-	{ name: SortField.deadLine, label: 'Sort dead-line' },
+	{ name: SortField.deadLine, label: 'Sort due date' },
 ];
 
 // const iconConfig = useMemo(() => {

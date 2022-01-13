@@ -18,13 +18,11 @@
 		&--invalid {
 			&:focus {
 				color: $black;
-				background-color: $white;
 				border-color: $red;
 				box-shadow: 0 0 0 0.2rem $red50a;
 			}
 
 			color: $black;
-			background-color: $white;
 			border-color: $red;
 			box-shadow: 0 0 0 0.2rem $red50a;
 
