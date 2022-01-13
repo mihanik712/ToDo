@@ -40,19 +40,21 @@ const ItemEditForm = ({
 			>
 				<div className="item-edit-form__row">
 					<div className="item-edit-form__left">
-						<input
-							className="item-edit-form__checkbox"
-							type="checkbox"
-							checked={done}
-							readOnly
-						/>
+						<div className="item-edit-form__label-row">
+							<input
+								className="item-edit-form__checkbox"
+								type="checkbox"
+								checked={done}
+								readOnly
+							/>
 
-						<input
-							className={itemEditFormInputCN}
-							type="text"
-							onChange={handleLabelChange}
-							defaultValue={label}
-						/>
+							<input
+								className={itemEditFormInputCN}
+								type="text"
+								onChange={handleLabelChange}
+								defaultValue={label}
+							/>
+						</div>
 
 						<input
 							className="item-edit-form__dead-line"

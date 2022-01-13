@@ -13,13 +13,18 @@
 	}
 
 	&__left {
-		padding: 0.5rem;
+		padding: 0.5rem 0 0.5rem 0.5rem;
 		margin-left: 0.5rem;
 		display: flex;
-		align-items: center;
 		flex: 1 1 auto;
 		flex-wrap: wrap;
 
+	}
+
+	&__label-row {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
 	}
 
 	&__label {
@@ -70,7 +75,6 @@
 
 	&__right {
 		margin: 0.5rem;
-		margin-left: 0;
 		display: flex;
 		flex-basis: content;
 		flex-direction: column;
@@ -114,5 +118,17 @@
 	&__icon {
 		display: flex;
 		margin-left: 1rem;
+	}
+
+	@media screen and (max-width: 40rem) {
+		&__dead-line {
+			margin-left: auto;
+			margin-top: 0.25rem;
+		}
+		&__left {
+			flex-direction: column;
+			//align-items: start;
+			//align-items: flex-end;
+		}
 	}
 }
