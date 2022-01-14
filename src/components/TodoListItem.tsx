@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import cn from 'classnames';
 import moment from 'moment';
 import { ItemType } from 'types/TodoTypes';
@@ -111,4 +111,4 @@ const TodoListItem = ({
 	);
 };
 
-export default TodoListItem;
+export default memo(TodoListItem);

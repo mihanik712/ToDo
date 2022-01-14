@@ -1,8 +1,6 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { SortField, SortType } from 'types/TodoTypes';
-import { BsSortUp, BsSortDown } from 'react-icons/bs';
-import { FcGenericSortingAsc, FcGenericSortingDesc } from 'react-icons/fc';
-import { IconContext } from 'react-icons';
+import { FaSortAmountDownAlt, FaSortAmountDown } from 'react-icons/fa';
 
 interface ItemSelectPanelProps {
 	sortField: SortField;
@@ -14,16 +12,10 @@ interface ItemSelectPanelProps {
 }
 
 const sortButtonNames = [
-	{ name: SortField.priority, label: 'Sort priority' },
-	{ name: SortField.date, label: 'Sort date' },
-	{ name: SortField.deadLine, label: 'Sort due date' },
+	{ name: SortField.priority, label: 'Sort Priority' },
+	{ name: SortField.date, label: 'Sort Date' },
+	{ name: SortField.deadLine, label: 'Sort Due Date' },
 ];
-
-// const iconConfig = useMemo(() => {
-// 	color: 'white',
-// 	size: '1.5rem',
-// 	className: 'item-select-panel__sort-icon',
-// }, [];
 
 const ItemSelectPanel = ({
 	sortField,
@@ -46,21 +38,10 @@ const ItemSelectPanel = ({
 				className="item-select-panel__button-icon"
 			>
 				{label}
-				{/* {sortField === name
-					&& (sortType === SortType.asc
-						? <BsSortUp size="1.5rem" className="item-select-panel__sort-icon" />
-						: <BsSortDown size="1.5rem" className="item-select-panel__sort-icon" />
-					)} */}
-
 				{sortField === name
 					&& (sortType === SortType.asc
-						? (
-							// <IconContext.Provider value={iconConfig}>
-							<FcGenericSortingAsc size="1.5rem" className="item-select-panel__sort-icon" />
-							// </IconContext.Provider>
-						) : (
-							<FcGenericSortingDesc size="1.5rem" color="fff" className="item-select-panel__sort-icon" />
-						)
+						? <FaSortAmountDownAlt size="1.2rem" className="item-select-panel__sort-icon" />
+						: <FaSortAmountDown size="1.2rem" className="item-select-panel__sort-icon" />
 					)}
 			</span>
 		</button>
@@ -74,7 +55,7 @@ const ItemSelectPanel = ({
 					type="button"
 					onClick={handleToggleDoneAllItems}
 				>
-					{isAllDone ? 'Reset done' : 'Done all'}
+					{isAllDone ? 'Reset Done' : 'Done All'}
 				</button>
 
 				<button
@@ -82,7 +63,7 @@ const ItemSelectPanel = ({
 					type="button"
 					onClick={handleDeleteAllDoneItems}
 				>
-					Delete done
+					Delete Done
 				</button>
 
 				{sortButtons}

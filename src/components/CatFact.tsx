@@ -1,5 +1,6 @@
 import ErrorIndicator from 'components/ErrorIndicator';
 import Spinner from 'components/Spinner';
+import { memo } from 'react';
 
 interface CatFactProps {
 	fact: string;
@@ -43,4 +44,4 @@ const CatFact = ({
 	);
 };
 
-export default CatFact;
+export default memo(CatFact);

@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import {
 	getFilter,
@@ -70,4 +70,4 @@ const TodoController = () => {
 	);
 };
 
-export default TodoController;
+export default memo(TodoController);

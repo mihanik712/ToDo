@@ -69,7 +69,9 @@ const ItemEditForm = ({
 							className="item-edit-form__button"
 							type="submit"
 						>
-							Save
+							<span className="item-edit-form__button-label">
+								Save
+							</span>
 							<i className="item-edit-form__icon">
 								<BsPencilFill size="1.1rem" />
 							</i>

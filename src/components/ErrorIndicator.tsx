@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 interface ErrorIndicatorProps {
 	error: string;
 }
@@ -8,4 +10,4 @@ const ErrorIndicator = ({ error }: ErrorIndicatorProps) => (
 	</div>
 );
 
-export default ErrorIndicator;
+export default memo(ErrorIndicator);

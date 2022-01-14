@@ -15,7 +15,8 @@
 	&__left {
 		//padding: 0.5rem 0.5rem 0 0.5rem;
 		//margin: 0.25rem 0 0.125rem 0.5rem;
-		padding: 1rem 0 0 1rem;
+		//padding: 1rem 0 0 1rem;
+		padding: 1rem 0 0.25rem 0.5rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -28,6 +29,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		cursor: pointer;
+		padding: 0.25rem 0 0.25rem 0.5rem;
 		//margin-bottom: 0.25rem;
 	}
 
@@ -38,7 +40,7 @@
 	&__label {
 		margin-left: 0.5rem;
 		padding-left: 0.5rem;
-		line-height: 1.25rem;
+		line-height: 1.5rem;
 		white-space: nowrap;
 		color: $black;
 		overflow: hidden;
@@ -63,15 +65,13 @@
 	&__dates {
 		display: flex;
 		font-size: 0.75rem;
-		margin-top: 0.25rem;
+		margin-left: 2.25rem;
 	}
 
 	&__date {
-		//min-width: 7rem;
 		display: flex;
 		color: $grey;
 		white-space: nowrap;
-		margin-left: 1.75rem;
 	}
 
 	&__dead-line {
@@ -92,7 +92,7 @@
 	}
 
 	&__right {
-		margin: 0.5rem;
+		margin: 0.8125rem;
 		display: flex;
 		flex-basis: content;
 		justify-content: center;
