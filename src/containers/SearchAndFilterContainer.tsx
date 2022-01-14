@@ -9,7 +9,7 @@ import { FilterMode } from 'types/TodoTypes';
 interface SearchAndFilterContainerProps {
 	filter: FilterMode;
 	term: string;
-  }
+}
 
 const SearchAndFilterContainer = ({ filter, term }: SearchAndFilterContainerProps) => {
 	const dispatch = useDispatch();
