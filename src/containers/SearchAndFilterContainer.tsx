@@ -12,8 +12,6 @@ interface SearchAndFilterContainerProps {
   }
 
 const SearchAndFilterContainer = ({ filter, term }: SearchAndFilterContainerProps) => {
-	console.log('SearchAndFilterContainer render');
-
 	const dispatch = useDispatch();
 
 	const handleSearchChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) =>

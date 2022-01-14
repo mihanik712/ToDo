@@ -27,8 +27,6 @@ const mapStateToProps = (state: ReduxStateType) => ({
 });
 
 const TodoController = () => {
-	console.log('TodoController render');
-
 	const {
 		todoData,
 		term,
@@ -58,12 +56,19 @@ const TodoController = () => {
 				isAllDone={isAllDone}
 			/>
 			<TodoList>
-				{visibleItems.map((item) => (
-					<TodoListItemContainer
-						key={item.id}
-						item={item}
-					/>
-				))}
+				{visibleItems.length > 0
+					? visibleItems.map((item) => (
+						<TodoListItemContainer
+							key={item.id}
+							item={item}
+						/>
+					))
+					: (
+						<span>
+							There are no any items!
+							Try to change search, filter and sorting or just add new item.
+						</span>
+					)}
 			</TodoList>
 			<CatFactContainer />
 		</>

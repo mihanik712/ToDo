@@ -12,8 +12,6 @@ interface TodoListItemContainerProps {
 }
 
 const TodoListItemContainer = ({ item }: TodoListItemContainerProps) => {
-	console.log('TodoListItemContainer render');
-
 	const { id, label, deadLine } = item;
 	const [isEditItem, setIsEditItem] = useState<boolean>(false);
 	const [editLabel, setEditLabel] = useState<string>(label);

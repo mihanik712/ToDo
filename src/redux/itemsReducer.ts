@@ -20,8 +20,6 @@ const ItemsReducer = (
 	state = initialState,
 	action: TodoActionsTypes,
 ): ItemsStateType => {
-	console.log('action state >> ', action, state);
-
 	switch (action.type) {
 		case actions.ADD_ITEM:
 			return {

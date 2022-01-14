@@ -26,7 +26,7 @@ const useFetchCatFact = () => {
 			})
 			.catch((err) => {
 				setIsLoading(false);
-				setError(`An error occured during loading fact about cat: ${err}`);
+				setError(`An error occurred during loading fact about cat: ${err}`);
 			});
 	}, []);
 

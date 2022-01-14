@@ -3,8 +3,6 @@ import CatFact from 'components/CatFact';
 import useFetchCatFact from 'requests/CatRequests';
 
 const CatFactContainer = () => {
-	console.log('CatFactContainer render');
-
 	const { data, isLoading, error, fetchCatFact } = useFetchCatFact();
 
 	useEffect(() => {

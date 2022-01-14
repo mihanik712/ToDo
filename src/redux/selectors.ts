@@ -1,5 +1,4 @@
 import moment from 'moment';
-import _ from 'underscore';
 import { createSelector } from 'reselect';
 import {
 	FilterMode,

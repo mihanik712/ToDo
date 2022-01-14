@@ -15,8 +15,6 @@ const ItemSelectPanelContainer = ({
 	sortType,
 	isAllDone,
 }: ItemSelectPanelContainerProps) => {
-	console.log('ItemSelectPanelContainer render');
-
 	const dispatch = useDispatch();
 
 	const handleToggleDoneAllItems = useCallback(() =>

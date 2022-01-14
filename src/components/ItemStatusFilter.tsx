@@ -2,11 +2,11 @@ import { memo } from 'react';
 import { FilterMode } from 'types/TodoTypes';
 
 const buttonNames = [
-	{ name: FilterMode.all, label: 'All' },
-	{ name: FilterMode.notDone, label: 'Not Done' },
-	{ name: FilterMode.done, label: 'Done' },
-	{ name: FilterMode.unexpired, label: 'Unexpired' },
-	{ name: FilterMode.overdue, label: 'Overdue' },
+	{ name: FilterMode.all, label: 'All', title: 'view all items' },
+	{ name: FilterMode.notDone, label: 'Not Done', title: 'view only not done items' },
+	{ name: FilterMode.done, label: 'Done', title: 'view only done items' },
+	{ name: FilterMode.unexpired, label: 'Unexpired', title: 'view only items with an unexpired or unset due date' },
+	{ name: FilterMode.overdue, label: 'Overdue', title: 'view only overdue items' },
 ];
 
 interface ItemStatusFilterProps {
@@ -15,14 +15,13 @@ interface ItemStatusFilterProps {
 }
 
 const ItemStatusFilter = ({ filter, handleFilterChange }: ItemStatusFilterProps) => {
-	console.log('ItemStatusFilter render');
-
-	const buttons = buttonNames.map(({ name, label }) => (
+	const buttons = buttonNames.map(({ name, label, title }) => (
 		<button
 			className={`item-status-filter__button ${filter === name ? 'item-status-filter__button--active' : ''}`}
 			type="button"
 			key={name}
 			onClick={() => handleFilterChange(name)}
+			title={title}
 		>
 			{label}
 		</button>

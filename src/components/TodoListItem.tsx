@@ -25,8 +25,6 @@ const TodoListItem = ({
 	handleDeleteItem,
 	handleToggleIsEditItem,
 }: TodoListItemProps) => {
-	console.log('TodoListItem render');
-
 	const { id, label, date, important, done, deadLine } = item;
 	const todoListItemLabelCN = useMemo(() =>
 		cn(

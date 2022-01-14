@@ -11,8 +11,6 @@ const ItemAddFormContainer = () => {
 	const [isValidLabel, setIsValidLabel] = useState<boolean>(true);
 	const dispatch = useDispatch();
 
-	console.log('ItemAddFormContainer render');
-
 	const handleLabelChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) => {
 		setLabel(e.currentTarget.value.trim());
 		setIsValidLabel(e.currentTarget.value.trim() !== '');

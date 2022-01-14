@@ -2,6 +2,12 @@ import { memo } from 'react';
 import { SortField, SortType } from 'types/TodoTypes';
 import { FaSortAmountDownAlt, FaSortAmountDown } from 'react-icons/fa';
 
+const sortButtonNames = [
+	{ name: SortField.priority, label: 'Sort Priority' },
+	{ name: SortField.date, label: 'Sort Date' },
+	{ name: SortField.deadLine, label: 'Sort Due Date' },
+];
+
 interface ItemSelectPanelProps {
 	sortField: SortField;
 	sortType: SortType;
@@ -11,12 +17,6 @@ interface ItemSelectPanelProps {
 	handleSortItems: (name: SortField) => void;
 }
 
-const sortButtonNames = [
-	{ name: SortField.priority, label: 'Sort Priority' },
-	{ name: SortField.date, label: 'Sort Date' },
-	{ name: SortField.deadLine, label: 'Sort Due Date' },
-];
-
 const ItemSelectPanel = ({
 	sortField,
 	sortType,
@@ -25,8 +25,6 @@ const ItemSelectPanel = ({
 	handleToggleDoneAllItems,
 	handleSortItems,
 }: ItemSelectPanelProps) => {
-	console.log('ItemSelectPanel render');
-
 	const sortButtons = sortButtonNames.map(({ name, label }) => (
 		<button
 			className={`item-select-panel__button ${sortField === name ? 'item-select-panel__button--active' : ''}`}
@@ -54,6 +52,7 @@ const ItemSelectPanel = ({
 					className="item-select-panel__button"
 					type="button"
 					onClick={handleToggleDoneAllItems}
+					title={isAllDone ? 'make all done items undone' : 'make all items done'}
 				>
 					{isAllDone ? 'Reset Done' : 'Done All'}
 				</button>
@@ -62,6 +61,7 @@ const ItemSelectPanel = ({
 					className="item-select-panel__button"
 					type="button"
 					onClick={handleDeleteAllDoneItems}
+					title="delete all done items"
 				>
 					Delete Done
 				</button>

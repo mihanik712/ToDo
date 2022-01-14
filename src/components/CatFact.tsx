@@ -15,8 +15,6 @@ const CatFact = ({
 	error,
 	handleUpdateCatFact,
 }: CatFactProps) => {
-	console.log('CatFact render');
-
 	if (loading) {
 		return <Spinner />;
 	}

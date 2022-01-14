@@ -20,8 +20,6 @@ const ItemEditForm = ({
 	handleLabelChange,
 	handleDeadLineChange,
 }: ItemEditFormProps) => {
-	console.log('ItemEditForm render');
-
 	const { id, important, done, label } = item;
 	const itemEditFormInputCN = useMemo(() =>
 		cn(
