@@ -1,21 +1,19 @@
 const TestDropdownMenu = () => (
-	<div>
-		<div className="menu-area">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Services</a>
-					<ul className="dropdown-1">
-						<li><a href="#">service one</a></li>
-						<li><a href="#">service two</a></li>
-						<li><a href="#">service three</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Porfolio</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+	<div className="filter__row">
+		<div className="filter__content">
+			<label className="filter__label">
+				Filter:
+			</label>
+			<select className="filter__select">
+				<option>All</option>
+				<option>Not Done</option>
+				<option>Done</option>
+				<option>Unexpired</option>
+				<option>Overdue</option>
+			</select>
 		</div>
 	</div>
+
 );
 
 export default TestDropdownMenu;
