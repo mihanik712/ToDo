@@ -16,7 +16,6 @@ import ItemAddFormContainer from 'containers/ItemAddFormContainer';
 import SearchAndFilterContainer from 'containers/SearchAndFilterContainer';
 import CatFactContainer from 'containers//CatFactContainer';
 import { ReduxStateType } from 'types/TodoTypes';
-import TestDropdownMenu from 'components/TestDropdownMenu';
 
 const mapStateToProps = (state: ReduxStateType) => ({
 	todoData: getTodoData(state),
@@ -71,7 +70,6 @@ const TodoController = () => {
 						</span>
 					)}
 			</TodoList>
-			<TestDropdownMenu />
 			<CatFactContainer />
 		</>
 	);

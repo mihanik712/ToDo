@@ -13,7 +13,6 @@ const TestDropdownMenu = () => (
 			</select>
 		</div>
 	</div>
-
 );
 
 export default TestDropdownMenu;

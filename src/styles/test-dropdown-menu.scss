@@ -42,7 +42,6 @@
 
 
 .filter__row {
-  margin-top: 1rem;
   display: flex;
   align-items: center;
 }
@@ -51,7 +50,6 @@
   @extend .button;
   //padding: 0 0 0 0.5rem;
   //height: 2.375rem;
-  margin-right: 2rem;
   padding: 0.375rem 0rem 0.375rem 0.75rem;
   display: flex;
   align-items: center;
