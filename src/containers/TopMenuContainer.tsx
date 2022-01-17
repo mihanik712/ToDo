@@ -1,19 +1,40 @@
 import * as React from 'react';
 import { memo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import ItemStatusFilter from 'components/ItemStatusFilter';
+import { changeFilter, changeSearch, deleteAllDoneItems, toggleAllItemsDone, toggleSort } from 'redux/actions';
+import { FilterMode, SortField, SortType } from 'types/TodoTypes';
 import SearchPanel from 'components/SearchPanel';
-import { changeFilter, changeSearch } from 'redux/actions';
-import { FilterMode } from 'types/TodoTypes';
-import ItemSelectPanel from 'components/ItemSelectPanel';
-// import ItemSelectPanelContainer from './ItemSelectPanelContainer';
+import ItemFilterSelect from 'components/ItemFilterSelect';
+import ItemButtonsMenu from 'components/ItemButtonsMenu';
+import ItemSortingSelect, { SortName } from 'components/ItemSortingSelect';
 
-interface SearchAndFilterContainerProps {
+const translateSortName = (sortName: SortName): [SortField, SortType] => {
+	switch (sortName) {
+		case SortName.dateOld: return [SortField.date, SortType.asc];
+		case SortName.dateNew: return [SortField.date, SortType.desc];
+		case SortName.dueDateOld: return [SortField.deadLine, SortType.asc];
+		case SortName.dueDateNew: return [SortField.deadLine, SortType.desc];
+		case SortName.priorityLow: return [SortField.priority, SortType.asc];
+		case SortName.priorityHigh: return [SortField.priority, SortType.desc];
+		default: return [SortField.date, SortType.desc];
+	}
+};
+
+interface TopMenuContainerProps {
 	filter: FilterMode;
 	term: string;
+	sortField: SortField;
+	sortType: SortType;
+	isAllDone: boolean;
 }
 
-const SearchAndFilterContainer = ({ filter, term }: SearchAndFilterContainerProps) => {
+const TopMenuContainer = ({
+	filter,
+	term,
+	sortField,
+	sortType,
+	isAllDone,
+}: TopMenuContainerProps) => {
 	const dispatch = useDispatch();
 
 	const handleSearchChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) =>
@@ -26,8 +47,19 @@ const SearchAndFilterContainer = ({ filter, term }: SearchAndFilterContainerProp
 
 	const handleFilterChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) =>
 		dispatch(changeFilter(e.target.value as FilterMode)),
-	// dispatch(changeFilter(FilterMode[e.target.value])),
 	[]);
+
+	const handleToggleDoneAllItems = useCallback(() =>
+		dispatch(toggleAllItemsDone(!isAllDone)),
+	[isAllDone]);
+
+	const handleDeleteAllDoneItems = useCallback(() =>
+		dispatch(deleteAllDoneItems()),
+	[]);
+
+	const handleSortItems = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => (
+		dispatch(toggleSort(...translateSortName(e.target.value as SortName)))),
+	[sortType]);
 
 	return (
 		<div className="search-filter-panel">
@@ -39,9 +71,23 @@ const SearchAndFilterContainer = ({ filter, term }: SearchAndFilterContainerProp
 					/>
 				</div>
 				<div className="search-filter-panel__item-status-filter">
-					<ItemStatusFilter
+					<ItemFilterSelect
 						filter={filter}
 						handleFilterChange={handleFilterChange}
+					/>
+				</div>
+				<div className="search-filter-panel__item-status-filter">
+					<ItemSortingSelect
+						sortField={sortField}
+						sortType={sortType}
+						handleSortItems={handleSortItems}
+					/>
+				</div>
+				<div className="search-filter-panel__item-status-filter">
+					<ItemButtonsMenu
+						isAllDone={isAllDone}
+						handleToggleDoneAllItems={handleToggleDoneAllItems}
+						handleDeleteAllDoneItems={handleDeleteAllDoneItems}
 					/>
 				</div>
 			</div>
@@ -49,7 +95,7 @@ const SearchAndFilterContainer = ({ filter, term }: SearchAndFilterContainerProp
 	);
 };
 
-export default memo(SearchAndFilterContainer);
+export default memo(TopMenuContainer);
 
 // import * as React from 'react';
 // import { memo, useCallback } from 'react';

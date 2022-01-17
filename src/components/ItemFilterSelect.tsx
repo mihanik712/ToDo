@@ -1,34 +1,33 @@
 import React, { memo } from 'react';
 import { FilterMode } from 'types/TodoTypes';
 
-interface ItemStatusFilterProps {
+interface ItemFilterSelectProps {
 	filter: FilterMode;
 	handleFilterChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const ItemStatusFilter = ({ filter, handleFilterChange }: ItemStatusFilterProps) => (
+const ItemFilterSelect = ({ filter, handleFilterChange }: ItemFilterSelectProps) => (
 	<div className="filter__row">
 		<div className="filter__content">
 			<label className="filter__label">
 				Filter:
-				<select
-					className="filter__select"
-					onChange={handleFilterChange}
-					defaultValue={filter}
-				>
-					{/* <option value="all">All</option> */}
-					<option value={FilterMode.all}>All</option>
-					<option value={FilterMode.notDone}>Not Done</option>
-					<option value={FilterMode.done}>Done</option>
-					<option value={FilterMode.unexpired}>Unexpired</option>
-					<option value={FilterMode.overdue}>Overdue</option>
-				</select>
 			</label>
+			<select
+				className="filter__select"
+				onChange={handleFilterChange}
+				defaultValue={filter}
+			>
+				<option value={FilterMode.all}>All</option>
+				<option value={FilterMode.notDone}>Not Done</option>
+				<option value={FilterMode.done}>Done</option>
+				<option value={FilterMode.unexpired}>Unexpired</option>
+				<option value={FilterMode.overdue}>Overdue</option>
+			</select>
 		</div>
 	</div>
 );
 
-export default memo(ItemStatusFilter);
+export default memo(ItemFilterSelect);
 
 // import { memo } from 'react';
 // import { FilterMode } from 'types/TodoTypes';

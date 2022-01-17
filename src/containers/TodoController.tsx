@@ -11,9 +11,8 @@ import {
 import AppHeader from 'components/AppHeader';
 import TodoList from 'components/TodoList';
 import TodoListItemContainer from 'containers/TodoListItemContainer';
-import ItemSelectPanelContainer from 'containers/ItemSelectPanelContainer';
 import ItemAddFormContainer from 'containers/ItemAddFormContainer';
-import SearchAndFilterContainer from 'containers/SearchAndFilterContainer';
+import TopMenuContainer from 'containers/TopMenuContainer';
 import CatFactContainer from 'containers//CatFactContainer';
 import { ReduxStateType } from 'types/TodoTypes';
 
@@ -45,16 +44,14 @@ const TodoController = () => {
 				doneCount={doneCount}
 				todoCount={todoCount}
 			/>
-			<SearchAndFilterContainer
+			<TopMenuContainer
 				filter={filter}
 				term={term}
-			/>
-			<ItemAddFormContainer />
-			<ItemSelectPanelContainer
 				sortField={sortField}
 				sortType={sortType}
 				isAllDone={isAllDone}
 			/>
+			<ItemAddFormContainer />
 			<TodoList>
 				{visibleItems.length > 0
 					? visibleItems.map((item) => (
@@ -66,7 +63,7 @@ const TodoController = () => {
 					: (
 						<span>
 							There are no any items!
-							Try to change search, filter and sorting or just add new item.
+							Try to change search, filter and sorting or just add a new item.
 						</span>
 					)}
 			</TodoList>
