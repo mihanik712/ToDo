@@ -1,15 +1,13 @@
-.item-status-filter {
+.item-buttons-menu {
 	&__button-group {
 		@extend .button-group;
+
 		display: flex;
 	}
 
 	&__button {
 		@extend .button;
-		flex: 1 1 auto;
 
-		&--active {
-			@extend .button--active;
-		}
+		flex: 1 1 auto;
 	}
 }

@@ -28,25 +28,23 @@ const ItemSortingSelect = ({
 	sortType,
 	handleSortItems,
 }: ItemSortingSelectProps) => (
-	<div className="item-select-panel">
-		<div className="filter__row">
-			<div className="filter__content">
-				<label className="filter__label">
-					Sorting: First
-				</label>
-				<select
-					className="filter__select"
-					onChange={handleSortItems}
-					defaultValue={getSortName(sortField, sortType)}
-				>
-					<option value={SortName.priorityHigh}>{SortName.priorityHigh}</option>
-					<option value={SortName.priorityLow}>{SortName.priorityLow}</option>
-					<option value={SortName.dateOld}>{SortName.dateOld}</option>
-					<option value={SortName.dateNew}>{SortName.dateNew}</option>
-					<option value={SortName.dueDateOld}>{SortName.dueDateOld}</option>
-					<option value={SortName.dueDateNew}>{SortName.dueDateNew}</option>
-				</select>
-			</div>
+	<div className="item-sorting-select">
+		<div className="item-sorting-select__select">
+			<label className="item-sorting-select__label">
+				Sorting: First
+			</label>
+			<select
+				className="item-sorting-select__list"
+				onChange={handleSortItems}
+				defaultValue={getSortName(sortField, sortType)}
+			>
+				<option value={SortName.priorityHigh}>{SortName.priorityHigh}</option>
+				<option value={SortName.priorityLow}>{SortName.priorityLow}</option>
+				<option value={SortName.dateOld}>{SortName.dateOld}</option>
+				<option value={SortName.dateNew}>{SortName.dateNew}</option>
+				<option value={SortName.dueDateOld}>{SortName.dueDateOld}</option>
+				<option value={SortName.dueDateNew}>{SortName.dueDateNew}</option>
+			</select>
 		</div>
 	</div>
 );

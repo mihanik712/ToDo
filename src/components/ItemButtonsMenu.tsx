@@ -10,9 +10,9 @@ const ItemButtonsMenu = ({
 	handleDeleteAllDoneItems,
 }: ItemButtonsMenuProps) => (
 	<div className="item-buttons-menu">
-		<div className="item-select-panel__button-group">
+		<div className="item-buttons-menu__button-group">
 			<button
-				className="item-select-panel__button"
+				className="item-buttons-menu__button"
 				type="button"
 				onClick={handleToggleDoneAllItems}
 				title={isAllDone ? 'make all done items undone' : 'make all items done'}
@@ -21,7 +21,7 @@ const ItemButtonsMenu = ({
 			</button>
 
 			<button
-				className="item-select-panel__button"
+				className="item-buttons-menu__button"
 				type="button"
 				onClick={handleDeleteAllDoneItems}
 				title="delete all done items"

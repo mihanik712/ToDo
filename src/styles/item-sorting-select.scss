@@ -1,0 +1,15 @@
+.item-sorting-select {
+	&__select {
+		@extend .select;
+
+		display: flex;
+		align-items: center;
+		height: 2.375rem;
+	}
+
+	&__list {
+		@extend .select__list;
+
+		flex: 1 1 auto;
+	}
+}

@@ -7,13 +7,13 @@ interface ItemFilterSelectProps {
 }
 
 const ItemFilterSelect = ({ filter, handleFilterChange }: ItemFilterSelectProps) => (
-	<div className="filter__row">
-		<div className="filter__content">
-			<label className="filter__label">
+	<div className="item-filter-select">
+		<div className="item-filter-select__select">
+			<label className="item-filter-select__label">
 				Filter:
 			</label>
 			<select
-				className="filter__select"
+				className="item-filter-select__list"
 				onChange={handleFilterChange}
 				defaultValue={filter}
 			>

@@ -208,21 +208,43 @@ body {
 			border-top: none;
 		}
 	}
+}
 
+.select {
+  @extend .button;
 
+  padding: 0.375rem 0rem 0.375rem 0.75rem;
+  color: $lightcyan;
+  font-weight: bold;
+  border-right: none;
+
+  &:hover {
+    color: $white;
+  }
+
+	&__list {
+		@extend .button, .button--active;
+
+		text-align: left;
+		margin-left: 0.75rem;
+		height: 2.375rem;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-color: $grey;
+	}
 }
 
 @import 'styles/app.scss';
+@import 'styles/error-indicator.scss';
+@import 'styles/spinner.scss';
 @import 'styles/app-header.scss';
 @import 'styles/cat-fact.scss';
-@import 'styles/error-indicator.scss';
-@import 'styles/item-add-form.scss';
-@import 'styles/item-edit-form.scss';
-@import 'styles/item-select-panel.scss';
-@import 'styles/item-status-filter.scss';
+@import 'styles/top-menu-container.scss';
 @import 'styles/search-panel.scss';
-@import 'styles/spinner.scss';
+@import 'styles/item-filter-select.scss';
+@import 'styles/item-sorting-select.scss';
+@import 'styles/item-buttons-menu.scss';
+@import 'styles/item-add-form.scss';
 @import 'styles/todo-list.scss';
 @import 'styles/todo-list-item.scss';
-@import 'styles/search-and-filter-container.scss';
-@import 'styles/test-dropdown-menu.scss';
+@import 'styles/item-edit-form.scss';

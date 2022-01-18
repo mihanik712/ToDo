@@ -62,28 +62,28 @@ const TopMenuContainer = ({
 	[sortType]);
 
 	return (
-		<div className="search-filter-panel">
-			<div className="search-filter-panel__row">
-				<div className="search-filter-panel__search-panel">
+		<div className="top-menu">
+			<div className="top-menu__row">
+				<div className="top-menu__search-panel">
 					<SearchPanel
 						term={term}
 						handleSearchChange={handleSearchChange}
 					/>
 				</div>
-				<div className="search-filter-panel__item-status-filter">
+				<div className="top-menu__item-filter-select">
 					<ItemFilterSelect
 						filter={filter}
 						handleFilterChange={handleFilterChange}
 					/>
 				</div>
-				<div className="search-filter-panel__item-status-filter">
+				<div className="top-menu__item-sorting-select">
 					<ItemSortingSelect
 						sortField={sortField}
 						sortType={sortType}
 						handleSortItems={handleSortItems}
 					/>
 				</div>
-				<div className="search-filter-panel__item-status-filter">
+				<div className="top-menu__item-buttons-menu">
 					<ItemButtonsMenu
 						isAllDone={isAllDone}
 						handleToggleDoneAllItems={handleToggleDoneAllItems}
